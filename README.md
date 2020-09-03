@@ -1,4 +1,4 @@
-# parkinglocator
+# locator
 
 A new Flutter project.
 
