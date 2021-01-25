@@ -14,30 +14,22 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height / 2,
-              width: MediaQuery.of(context).size.width,
-              child: GoogleMap(
-                initialCameraPosition:
-                    CameraPosition(target: LatLng(6.5916, 3.2911), zoom: 16.0),
-                zoomGesturesEnabled: true,
-              ),
-            )
-          ],
-        ),
+      body: Column(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height / 3,
+            width: MediaQuery.of(context).size.width,
+            child: GoogleMap(
+              initialCameraPosition:
+                  CameraPosition(target: LatLng(6.5916, 3.2911), zoom: 16.0),
+              zoomGesturesEnabled: true,
+            ),
+          )
+        ],
       ),
     );
   }
 }
-// import 'dart:async';
-
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:geolocator/geolocator.dart';
-// import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 // class Search extends StatefulWidget {
 //   @override
