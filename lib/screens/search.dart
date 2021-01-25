@@ -14,18 +14,20 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 2,
-            width: MediaQuery.of(context).size.width,
-            child: GoogleMap(
-              initialCameraPosition:
-                  CameraPosition(target: LatLng(29.9792, 31.1342), zoom: 16.0),
-              zoomGesturesEnabled: true,
-            ),
-          )
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height / 2,
+              width: MediaQuery.of(context).size.width,
+              child: GoogleMap(
+                initialCameraPosition:
+                    CameraPosition(target: LatLng(6.5916, 3.2911), zoom: 16.0),
+                zoomGesturesEnabled: true,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
