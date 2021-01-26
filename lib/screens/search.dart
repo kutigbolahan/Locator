@@ -15,19 +15,25 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     final currentPosition = Provider.of<Position>(context);
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 3,
-            width: MediaQuery.of(context).size.width,
-            child: GoogleMap(
-              initialCameraPosition:
-                  CameraPosition(target: LatLng(6.5916, 3.2911), zoom: 16.0),
-              zoomGesturesEnabled: true,
+      body: (currentPosition != null)
+          ? Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height / 3,
+                  width: MediaQuery.of(context).size.width,
+                  child: GoogleMap(
+                    initialCameraPosition: CameraPosition(
+                        target: LatLng(currentPosition.latitude,
+                            currentPosition.longitude),
+                        zoom: 16.0),
+                    zoomGesturesEnabled: true,
+                  ),
+                )
+              ],
+            )
+          : Center(
+              child: CircularProgressIndicator(),
             ),
-          )
-        ],
-      ),
     );
   }
 }
